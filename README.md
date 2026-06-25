@@ -1,7 +1,5 @@
 # Self Esteem (Astro Template)
 
-![Magazine cover homepage](public/hero.jpeg)
-
 [![Live preview](https://img.shields.io/badge/▶_Live_preview-121418?style=for-the-badge&labelColor=121418&color=e9e6e4)](https://miro.build/templates/self-esteem)
 
 A magazine-style editorial template built with [Astro](https://astro.build). Original layout by [Aysenur Turk](https://codepen.io/TurkAysenur/pen/gOmMgpx), re-implemented here as a full project.
@@ -42,9 +40,9 @@ npm run build    # static output to ./dist
 ## Features
 
 - Full-viewport magazine homepage (`/`)
-- `/blog` index + `/blog/[slug]` MDX post pages with prev/next
+- `/newsletter` index + `/newsletter/[slug]` MDX post pages with prev/next
 - `/tags/[tag]` pages generated from post frontmatter
-- `/studio`, `/contact`, `/work` (data-driven), `/404`
+- `/about`, `/work` (data-driven), `/404`
 - RSS at `/rss.xml`, OG/Twitter meta in `BaseLayout`
 - `PageLayout` + `_template.astro.example` for creating new pages
 

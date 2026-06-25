@@ -21,15 +21,15 @@ const formatted = new Intl.DateTimeFormat('en-GB', {
 ---
 
 <div class="blog-header">
-  <div class="blog-article header-article">
-    <div class="blog-big__title">{title}</div>
-    <div class="blog-menu small-title date">{formatted}</div>
+  <div class="header-article">
+    <h2 class="blog-article-title">{title}</h2>
+    <div class="date">{formatted}</div>
   </div>
   <div class="blog-article">
     <img src={cover} alt={title} />
-    <h2>
+    <div class="blog-title-right">
       {summary}
-    </h2>
+    </div>
     <a href={href}>
       <svg
         xmlns="http://www.w3.org/2000/svg"

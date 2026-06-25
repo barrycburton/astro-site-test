@@ -16,24 +16,29 @@ posts.sort((a, b) => +b.data.date - +a.data.date);
 <BaseLayout>
   <div class="blog">
     <Menu />
-    <StickyHeader
-      title="barry burton"
-    />
+	
+	<div class="blog-main">
+		<div class="blog-header blog-is-sticky">
+		  <div class="blog-article header-article">
+		    <div class="blog-big__title">my name</div>
+		  </div>
+		</div>
 
-    <div class="blog-header-container">
-      {
-        work.map((item) => (
-          <PortfolioItem
-            title={item.data.title}
-            date={item.data.date}
-            cover={item.data.cover}
-            summary={item.data.summary}
-			order={item.data.order}
-            href={`/work/${item.id}`}
-          />
-        ))
-      }
-    </div>
+	    <div class="blog-header-container">
+	      {
+	        work.map((item) => (
+	          <PortfolioItem
+	            title={item.data.title}
+	            date={item.data.date}
+	            cover={item.data.cover}
+	            summary={item.data.summary}
+				order={item.data.order}
+	            href={`/work/${item.id}`}
+	          />
+	        ))
+	      }
+	    </div>
+	</div>
 
     <Sidebar entries={posts} />
   </div>

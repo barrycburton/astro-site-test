@@ -51,7 +51,7 @@ body {
   height: 100dvh;
   max-height: none;
   overflow: hidden;
-  grid-template-columns: 15% 20% 35% 30%;
+  grid-template-columns: 15% 55% 30%;
   grid-template-rows: 100%;
   width: 100%;
   padding: clamp(16px, 2vh, 32px) clamp(16px, 2vw, 40px);
@@ -208,6 +208,25 @@ body {
   }
 }
 
+.blog-main {
+  display: flex;
+  flex-direction: column;
+  
+  border-right: 1px solid $border-color;
+  
+  padding: 0 20px;
+
+  @media screen and (max-width: 768px) {
+    border-right: 0;
+  }
+}
+
+.blog-header {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  height: 155px;
+}
+
 .page-number {
   display: flex;
   flex-direction: column;
@@ -245,12 +264,19 @@ body {
   justify-content: flex-end;
 }
 
+.header-article {
+  margin: 8px 0 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0 20px;
+}
+
 .blog-article {
   h2 {
     font-size: 26px;
     font-weight: 500;
     line-height: 1.2;
-    margin: 8px 0 8px;
 
     span {
       font-family: $italic-font;
@@ -301,11 +327,6 @@ body {
   display: flex;
   flex-direction: column;
   scroll-snap-type: y mandatory;
-  border-right: 1px solid $border-color;
-
-  @media screen and (max-width: 768px) {
-    border-right: 0;
-  }
 
   & > * {
     flex-shrink: 0;
@@ -317,29 +338,6 @@ body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-  }
-}
-
-marquee {
-  font-size: 20px;
-  background-color: $body-bg;
-  color: $blog-bg;
-  padding: 6px 0;
-  width: calc(100% + 44px);
-  margin-left: -20px;
-  flex-shrink: 0;
-
-  span:before {
-    display: inline-block;
-    content: '';
-    border-radius: 50%;
-    width: 10px;
-    height: 10px;
-    position: relative;
-    top: -1px;
-    vertical-align: baseline;
-    background-color: $blog-bg;
-    margin: 0 16px;
   }
 }
 
@@ -609,6 +607,7 @@ body.menu-open {
 
   .blog-article h2 {
     font-size: 22px;
+	display: flex;
   }
 
   .blog-article a {
@@ -916,7 +915,7 @@ html {
   grid-template-columns: 220px 1fr;
   gap: 28px;
   padding: 28px 0;
-  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
   text-decoration: none;
   color: inherit;
 
