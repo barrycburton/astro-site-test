@@ -3,11 +3,11 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Menu from '../components/Menu.astro';
 import StickyHeader from '../components/StickyHeader.astro';
-import FeaturedArticle from '../components/FeaturedArticle.astro';
+import PortfolioItem from '../components/PortfolioItem.astro';
 import Sidebar from '../components/Sidebar.astro';
 
-const posts = await getCollection('posts', ({ data }) => data.featured);
-const featured = await getCollection('featured');
+const posts = await getCollection('posts');
+const work = await getCollection('work');
 
 const pinned = posts[0];
 posts.sort((a, b) => +b.data.date - +a.data.date);
@@ -17,27 +17,24 @@ posts.sort((a, b) => +b.data.date - +a.data.date);
   <div class="blog">
     <Menu />
     <StickyHeader
-      title="Self"
+      title="barry burton"
     />
 
     <div class="blog-header-container">
       {
-        posts.map((post) => (
-          <FeaturedArticle
-            bigTitle={post.data.bigTitle}
-            date={post.data.date}
-            emphasis={post.data.emphasis}
-            headline={post.data.headline}
-            cover={post.data.cover}
-            author={post.data.author}
-            readTime={post.data.readTime}
-            excerpt={post.data.excerpt}
-            href={`/blog/${post.id}`}
+        work.map((item) => (
+          <PortfolioItem
+            title={item.data.title}
+            date={item.data.date}
+            cover={item.data.cover}
+            summary={item.data.summary}
+			order={item.data.order}
+            href={`/work/${item.id}`}
           />
         ))
       }
     </div>
 
-    <Sidebar entries={featured} />
+    <Sidebar entries={posts} />
   </div>
 </BaseLayout>

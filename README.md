@@ -52,11 +52,11 @@ npm run build    # static output to ./dist
 
 ```
 src/
-├── components/      Menu, Footer, FeaturedArticle, Sidebar, Marquee, Circle, StickyHeader
-├── content/         posts/ (md+mdx), featured/, work/
+├── components/      Menu, Footer, PortfolioItem, Sidebar, StickyHeader
+├── content/         newsletter/ (md+mdx), work/
 ├── content.config.ts
 ├── layouts/         BaseLayout, PageLayout
-├── pages/           index, blog/, tags/, studio, contact, work, 404, rss.xml
+├── pages/           index, newsletter/, tags/, about, work, 404, rss.xml
 └── styles/global.scss
 ```
 

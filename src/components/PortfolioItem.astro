@@ -1,17 +1,14 @@
 ---
 interface Props {
-  bigTitle: string;
+  title: string;
   date: Date;
-  emphasis?: string;
-  headline: string;
   cover: string;
-  author: string;
-  readTime: string;
-  excerpt: string;
+  summary: string;
+  order: number;
   href: string;
 }
 
-const { bigTitle, date, emphasis, headline, cover, author, readTime, excerpt, href } = Astro.props;
+const { title, date, cover, summary, order, href } = Astro.props;
 
 const formatted = new Intl.DateTimeFormat('en-GB', {
   day: '2-digit',
@@ -26,11 +23,11 @@ const parts = emphasis ? headline.split('{emphasis}') : [headline];
 
 <div class="blog-header">
   <div class="blog-article header-article">
-    <div class="blog-big__title">{bigTitle}</div>
+    <div class="blog-big__title">{title}</div>
     <div class="blog-menu small-title date">{formatted}</div>
   </div>
   <div class="blog-article">
-    <img src={cover} alt={bigTitle} />
+    <img src={cover} alt={title} />
     <h2>
       {
         emphasis ? (
@@ -40,15 +37,10 @@ const parts = emphasis ? headline.split('{emphasis}') : [headline];
             {parts[1]}
           </>
         ) : (
-          headline
+          summary
         )
       }
     </h2>
-    <div class="blog-detail">
-      <span>By {author}</span>
-      <span>{readTime}</span>
-    </div>
-    <p>{excerpt}</p>
     <a href={href}>
       <svg
         xmlns="http://www.w3.org/2000/svg"

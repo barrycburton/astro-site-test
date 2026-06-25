@@ -42,11 +42,9 @@ Hamburger appears at ≤1030, single column at ≤768.
 | --------------------------------------------------------- | -------------------------------------- |
 | [`Menu`](src/components/Menu.astro)                       | Primary nav (left rail, mobile drawer) |
 | [`Footer`](src/components/Footer.astro)                   | Subpage footer                         |
-| [`StickyHeader`](src/components/StickyHeader.astro)       | "Self / Pinned Issue / NO. xx"         |
-| [`FeaturedArticle`](src/components/FeaturedArticle.astro) | Magazine hero card (scroll-snaps)      |
+| [`StickyHeader`](src/components/StickyHeader.astro)       | "Header"                               |
+| [`PortfolioItem`](src/components/PortfolioItem.astro)     | Image hero card (scroll-snaps)         |
 | [`Sidebar`](src/components/Sidebar.astro)                 | Marquee + featured list + Circle       |
-| [`Circle`](src/components/Circle.astro)                   | Dark circular CTA                      |
-| [`Marquee`](src/components/Marquee.astro)                 | Dark scrolling ticker                  |
 
 ## Layouts
 
