@@ -15,7 +15,9 @@
     "@astrojs/mdx": "^5.0.0",
     "@astrojs/rss": "^4.0.18",
     "astro": "^6.3.7",
-    "sass": "^1.100.0"
+	"mdast-util-to-string": "^4.0.0",
+    "sass": "^1.100.0",
+	"strip-markdown": "^6.0.0"
   },
   "engines": {
     "node": ">=22.12.0"

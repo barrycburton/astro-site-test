@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import PageLayout from '../../layouts/PageLayout.astro';
 
 export async function getStaticPaths() {
@@ -23,6 +23,11 @@ export async function getStaticPaths() {
   }));
 }
 
+export async function getExcerpt(post) {
+  const {remarkPluginFrontmatter } = await render(post)
+  return remarkPluginFrontmatter.excerpt
+}
+
 const { tag, posts, work } = Astro.props;
 const fmt = (d: Date) =>
   `${String(d.getDate()).padStart(2, '0')}.${String(d.getMonth() + 1).padStart(2, '0')}.${d.getFullYear()}`;
@@ -31,7 +36,7 @@ const fmt = (d: Date) =>
 <PageLayout
   title={`#${tag}`}
   eyebrow="Tag"
-  description={`${posts.length} item${posts.length === 1 ? '' : 's'} tagged ${tag}.`}
+  description={`${posts.length + work.length} item${posts.length + work.length === 1 ? '' : 's'} tagged ${tag}.`}
 >
   <div class="post-list">
     {
@@ -42,10 +47,10 @@ const fmt = (d: Date) =>
           </div>
           <div>
             <div class="post-card__meta">
-              {fmt(post.data.date)} · {post.data.author}
+              {fmt(post.data.date)}
             </div>
-            <h2 class="post-card__title">{post.data.bigTitle}</h2>
-            <p class="post-card__excerpt">{post.data.excerpt}</p>
+            <h2 class="post-card__title">{post.data.title}</h2>
+            <p class="post-card__excerpt">{getExcerpt(post)}</p>
           </div>
         </a>
       ))

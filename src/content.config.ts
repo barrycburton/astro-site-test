@@ -18,9 +18,9 @@ const work = defineCollection({
     title: z.string(),
     date: z.coerce.date(),
     cover: z.string().url(),
-    summary: z.string(),
-    url: z.string().url().optional(),
 	tags: z.array(z.string()).default([]),
+	summary: z.string(),
+	url: z.string().url().optional(),
   }),
 });
 
