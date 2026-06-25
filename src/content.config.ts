@@ -20,16 +20,6 @@ const posts = defineCollection({
   }),
 });
 
-const featured = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/featured' }),
-  schema: z.object({
-    title: z.string(),
-    subtitle: z.string(),
-    date: z.coerce.date(),
-    order: z.number(),
-  }),
-});
-
 const work = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/work' }),
   schema: z.object({
@@ -42,4 +32,4 @@ const work = defineCollection({
   }),
 });
 
-export const collections = { posts, featured, work };
+export const collections = { posts, work };

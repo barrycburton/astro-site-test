@@ -1,7 +1,5 @@
 # Style Guide
 
-![Magazine cover homepage](public/hero.jpeg)
-
 Source of truth: [src/styles/global.scss](src/styles/global.scss).
 
 ## Colors

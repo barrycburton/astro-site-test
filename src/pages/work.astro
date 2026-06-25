@@ -8,7 +8,7 @@ const items = (await getCollection('work')).sort((a, b) => a.data.order - b.data
 <PageLayout
   title="Selected Work"
   eyebrow="Portfolio"
-  description="A sample of issues, collaborations, and side projects from the studio."
+  description="A sample of work."
 >
   {
     items.length === 0 ? (
