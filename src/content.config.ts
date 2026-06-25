@@ -24,7 +24,7 @@ const work = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/work' }),
   schema: z.object({
     title: z.string(),
-    date: z.string(),
+    date: z.coerce.date(),
     cover: z.string().url(),
     summary: z.string(),
     url: z.string().url().optional(),
