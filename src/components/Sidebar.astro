@@ -23,7 +23,7 @@ const {
 } = Astro.props;
 
 const fmt = (d: Date) =>
-  new Intl.DateTimeFormat('en-GB', {
+  new Intl.DateTimeFormat('en-US', {
     day: '2-digit',
     month: '2-digit',
     year: 'numeric',
@@ -35,10 +35,6 @@ const sorted = [...entries].sort((a, b) => +b.data.date - +a.data.date);
 ---
 
 <div class="blog-part right-blog">
-  <div class="blog-right-title-container">
-    <div class="blog-right-title">{heading}</div>
-	<a href={subscribeHref} class="blog-menu subscribe">{subscribeLabel}</a>
-  </div>
   <div class="blog-right">
     {
       sorted.map((e) => (
@@ -50,5 +46,8 @@ const sorted = [...entries].sort((a, b) => +b.data.date - +a.data.date);
         </div>
       ))
     }
+  </div>
+  <div class="blog-right-footer">
+	<a href={subscribeHref} class="blog-menu subscribe">{subscribeLabel} to {heading}</a>
   </div>
 </div>

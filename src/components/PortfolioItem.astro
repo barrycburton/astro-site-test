@@ -10,7 +10,7 @@ interface Props {
 
 const { title, date, cover, summary, order, href } = Astro.props;
 
-const formatted = new Intl.DateTimeFormat('en-GB', {
+const formatted = new Intl.DateTimeFormat('en-US', {
   day: '2-digit',
   month: '2-digit',
   year: 'numeric',
@@ -22,29 +22,13 @@ const formatted = new Intl.DateTimeFormat('en-GB', {
 
 <div class="blog-header">
   <div class="header-article">
-    <h2 class="blog-article-title">{title}</h2>
+    <h2 class="blog-article-title"><a href={href}>{title}</a></h2>
     <div class="date">{formatted}</div>
   </div>
   <div class="blog-article">
     <img src={cover} alt={title} />
-    <div class="blog-title-right">
+    <div class="blog-article-summary">
       {summary}
     </div>
-    <a href={href}>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="feather feather-corner-down-right"
-        viewBox="0 0 24 24"
-      >
-        <path d="M15 10l5 5-5 5"></path>
-        <path d="M4 4v7a4 4 0 004 4h12"></path>
-      </svg>
-      See More
-    </a>
   </div>
 </div>

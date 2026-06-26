@@ -11,13 +11,13 @@ interface Props {
 }
 
 const { title, description, eyebrow, heroImage, pageTitle } = Astro.props;
-const headTitle = pageTitle ?? `${title} — my name`;
+const headTitle = pageTitle ?? `${title} — My Name`;
 ---
 
 <BaseLayout title={headTitle} description={description} image={heroImage}>
   <div class="page">
     <header class="page-nav">
-      <a class="page-nav__brand" href="/">my name</a>
+      <a class="page-nav__brand" href="/">My Name</a>
       <nav aria-label="Primary">
         <a href="/work">Work</a>
         <a href="/newsletter">Newsletter</a>
