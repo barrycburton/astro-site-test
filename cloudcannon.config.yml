@@ -1,24 +1,52 @@
 paths:
-  static: public
   uploads: public/uploads
-timezone: America/Los_Angeles
-markdown:
-  engine: commonmark
-  options:
-    gfm: true
+  static: public
 collections_config:
   pages:
     path: src/pages
     icon: wysiwyg
-  source:
-    path: ''
-    icon: package_2
+    disable_url: false
+    disable_add: true
+    disable_add_folder: false
+    disable_file_actions: false
   featured:
     path: src/content/featured
     icon: gesture
+    disable_url: false
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
   posts:
     path: src/content/posts
     icon: event_available
+    disable_url: false
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
   work:
     path: src/content/work
     icon: work
+    disable_url: false
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+timezone: America/Los_Angeles
+markdown:
+  engine: commonmark
+  options:
+    xhtml: false
+    breaks: false
+    linkify: false
+    typographer: false
+    spaced_lists: false
+    sentence_per_line: false
+    gfm: true
+    code_block_fences: '```'
+    escape_snippets_in_code_blocks: false
+    treat_indentation_as_code: false
+    table: false
+    strikethrough: false
+    subscript: false
+    superscript: false
+    heading_ids: false
+    attributes: false
