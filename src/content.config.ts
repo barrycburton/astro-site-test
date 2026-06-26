@@ -13,14 +13,14 @@ const posts = defineCollection({
 });
 
 const work = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/work' }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/work' }),
   schema: z.object({
-    title: z.string(),
-    date: z.coerce.date(),
-    cover: z.string().url(),
-	tags: z.array(z.string()).default([]),
-	summary: z.string(),
-	url: z.string().url().optional(),
+  title: z.string(),
+  date: z.coerce.date(),
+  cover: z.string().url(),
+  tags: z.array(z.string()).default([]),
+  summary: z.string(),
+  url: z.string().url().optional(),
   }),
 });
 
