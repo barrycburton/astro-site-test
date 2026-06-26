@@ -12,6 +12,9 @@ collections_config:
   posts:
     path: src/content/posts
     icon: event_available
+    pages:
+      create:
+        path: '[relative_base_path]/{title|slugify}.md'
     disable_url: false
     disable_add: false
     disable_add_folder: false
@@ -19,6 +22,9 @@ collections_config:
   work:
     path: src/content/work
     icon: work
+    pages:
+      create:
+        path: '[relative_base_path]/{title|slugify}.md'
     disable_url: false
     _enabled_editors:
       - visual
