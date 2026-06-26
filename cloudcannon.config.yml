@@ -20,6 +20,9 @@ collections_config:
     path: src/content/work
     icon: work
     disable_url: false
+    _enabled_editors:
+      - visual
+      - content
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
