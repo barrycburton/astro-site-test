@@ -1,5 +1,20 @@
 {
   "version": 2,
+  "collections": [
+    {
+      "id": "collection-1782744402895",
+      "name": "Main Collection",
+      "postsPath": ".gitcms",
+      "imagesPath": "media"
+    },
+    {
+      "id": "newsletter",
+      "name": "Newsletter",
+      "postsPath": "newsletter",
+      "imagesPath": "public/media"
+    }
+  ],
+  "activeCollectionId": "collection-1782744402895",
   "settings": {
     "projectType": "astro",
     "domainUrl": "https://example.com",
@@ -15,13 +30,5 @@
     "updatePost": "fix(content): update post \"{filename}\"",
     "newImage": "feat(assets): add image \"{filename}\"",
     "updateImage": "refactor(assets): update image for \"{filename}\""
-  },
-  "collections": [
-    {
-      "id": "collection-1782744402895",
-      "name": "Main Collection",
-      "postsPath": ".gitcms",
-      "imagesPath": "media"
-    }
-  ]
+  }
 }
