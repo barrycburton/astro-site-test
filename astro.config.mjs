@@ -41,6 +41,25 @@ export default defineConfig({
         
         collections: [
           {
+            name: "pages",
+            label: "Pages",
+            folder: "src/content/pages",
+            create: true,
+            sortable_fields: ["title", "date"],
+            preview_path: "/{{slug}}/",
+            preview_path_date_field: "date",
+            fields: [
+              { label: "Title", name: "title", widget: "string", required: "true" },
+              {
+                label: "In Menu",
+                name: "in-menu",
+                widget: "boolean",
+                default: true,
+              },
+              { label: "Body", name: "body", widget: "markdown" },
+            ],
+          },
+          {
             name: "newsletter",
             label: "Newsletter",
             folder: "src/content/newsletter",
