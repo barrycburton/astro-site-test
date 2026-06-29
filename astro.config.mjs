@@ -23,8 +23,8 @@ export default defineConfig({
           branch: "main",
         },
 
-        media_folder: "@/public/media",
-        public_folder: "@/public",
+        media_folder: "/public/uploads",
+        public_folder: "/public",
         editor: { preview: false, },
 
         singletons: [
