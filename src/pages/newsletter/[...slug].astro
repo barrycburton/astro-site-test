@@ -26,8 +26,7 @@ const fmt = (d: Date) =>
 
 <PageLayout
   title={post.data.title}
-  heroImage={post.data.image}
-  pageTitle={`${post.data.title} — My Name`}
+  image={post.data.image}
 >
   <div class="post-meta">
     <span>{fmt(post.data.date)}</span>
@@ -46,9 +45,7 @@ const fmt = (d: Date) =>
   <hr style="border:0;border-top:1px solid #94918f;margin:32px 0;" />
 
   <div class="prose">
-    <editable-text data-prop="@content"> 
       <Content />
-    </editable-text>
   </div>
 
   <nav class="post-nav" aria-label="Adjacent Letters">

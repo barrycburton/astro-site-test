@@ -6,18 +6,32 @@ import StickyHeader from '../components/StickyHeader.astro';
 import PortfolioItem from '../components/PortfolioItem.astro';
 import Sidebar from '../components/Sidebar.astro';
 
-const newsletter = await getCollection('newsletter');
-const work = await getCollection('work');
+const newsletter = await getCollection('newsletter', ({ data }) => !data.draft);
+const work = await getCollection('work', ({ data }) => data.featured);
+
+const menuItems = [
+  { label: 'Work', href: '/work' },
+	{ label: 'Newsletter', href: '/newsletter' },
+  ...(await getCollection('pages', ({ data }) => data.inmenu)).map((page) => ({
+    label: page.data.title,
+    href: '/' + page.id,
+  }))
+];
+
+const siteTitle = (await getCollection('settings', (data) => (data.id == 'title')))[0].data;
+const siteDescription = (await getCollection('settings', (data) => (data.id == 'description')))[0].data;
 ---
 
-<BaseLayout>
+<BaseLayout title={siteTitle} description={siteDescription} >
   <div class="blog">
-    <Menu />
+    <Menu 
+      items={menuItems}
+    />
 	
 	<div class="blog-main">
 		<div class="blog-header blog-is-sticky">
 		  <div class="blog-article header-article">
-		    <div class="blog-big__title">My Name</div>
+		    <div class="blog-big__title">{siteTitle}</div>
 		  </div>
 		</div>
 

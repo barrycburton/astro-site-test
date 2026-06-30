@@ -1,6 +1,7 @@
 ---
 title: 'Happenings'
 date: 2021-07-04T00:00:00Z
+draft: false
 image: 'https://images.unsplash.com/photo-1529255484355-cb73c33c04bb?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTh8fGJsYWNrJTIwYW5kJTIwd2hpdGV8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=70'
 categories: ['category3', 'category4']
 ---

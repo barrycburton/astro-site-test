@@ -35,13 +35,6 @@ const fmt = (d: Date) =>
               <h2 class="post-card__title">
                 {post.data.title}
               </h2>
-              {post.data.categories.length > 0 && (
-                <div class="post-card__categories">
-                  {post.data.categories.map((category) => (
-                    <span>{category}</span>
-                  ))}
-                </div>
-              )}
 			  <div>
 			    {getExcerpt(post)}
 			  </div>

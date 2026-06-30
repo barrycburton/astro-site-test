@@ -1,6 +1,7 @@
 ---
 title: 'Newsletter Update'
 date: 2021-08-21T00:00:00Z
+draft: false
 image: 'https://images.unsplash.com/photo-1616248249518-b16013cd4e42?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTkzfHxibGFjayUyMGFuZCUyMHdoaXRlfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=70'
 categories: ['category1', 'category2']
 ---

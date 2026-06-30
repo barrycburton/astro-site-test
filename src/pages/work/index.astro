@@ -2,18 +2,19 @@
 import { getCollection } from 'astro:content';
 import PageLayout from '../../layouts/PageLayout.astro';
 
-const newsletter = (await getCollection('newsletter', ({ data }) => !data.draft)).sort(
+const newsletter = (await getCollection('newsletter')).sort(
   (a, b) => +b.data.date - +a.data.date,
 );
 
-const items = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
+const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
+
 ---
 
 <PageLayout
   title="Work"
 >
   {
-    items.length === 0 ? (
+    work.length === 0 ? (
       <p>
         No work entries yet. Add markdown files to <code>src/content/work/</code>
         with <code>title</code>, <code>year</code>, <code>image</code>, and
@@ -21,7 +22,7 @@ const items = (await getCollection('work')).sort((a, b) => a.data.order - b.data
       </p>
     ) : (
       <div class="work-grid">
-        {items.map((item) => {
+        {work.map((item) => {
           return (
             <a
               class="work-item"

@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
 import Footer from '../components/Footer.astro';
 
@@ -6,30 +7,49 @@ interface Props {
   title: string;
   description?: string;
   eyebrow?: string;
-  heroImage?: string;
-  pageTitle?: string;
+  image?: string;
 }
 
-const { title, description, eyebrow, heroImage, pageTitle } = Astro.props;
-const headTitle = pageTitle ?? `${title} — My Name`;
+const menuItems = [
+  { label: 'Work', href: '/work' },
+	{ label: 'Newsletter', href: '/newsletter' },
+  ...(await getCollection('pages', ({ data }) => data.inmenu)).map((page) => ({
+    label: page.data.title,
+    href: '/' + page.id,
+  }))
+];
+
+const footerItems = [
+  { label: 'Home', href: '/' },
+  ...menuItems,
+];
+
+const siteTitle = (await getCollection('settings', (data) => (data.id == 'title')))[0].data;
+
+const { title, description, eyebrow, image, } = Astro.props;
+const headTitle = `${title} — ${siteTitle}`;
 ---
 
-<BaseLayout title={headTitle} description={description} image={heroImage}>
+<BaseLayout title={headTitle} description={description} image={image}>
   <div class="page">
     <header class="page-nav">
-      <a class="page-nav__brand" href="/">My Name</a>
+      <a class="page-nav__brand" href="/">{siteTitle}</a>
       <nav aria-label="Primary">
-        <a href="/work">Work</a>
-        <a href="/newsletter">Newsletter</a>
-		<a href="/about">About</a>
+        {
+          menuItems.map((item) => (
+            <a href={item.href}>
+              {item.label}
+            </a>
+          ))
+        }
       </nav>
     </header>
 
     <main class="page-main">
       {
-        heroImage && (
-          <div class="page-hero">
-            <img src={heroImage} alt="" />
+        image && (
+          <div class="page-image">
+            <img src={image} alt="" />
           </div>
         )
       }
@@ -45,6 +65,6 @@ const headTitle = pageTitle ?? `${title} — My Name`;
       </div>
     </main>
 
-    <Footer />
+    <Footer items={footerItems} siteTitle={siteTitle} />
   </div>
 </BaseLayout>

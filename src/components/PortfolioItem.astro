@@ -21,14 +21,13 @@ const formatted = new Intl.DateTimeFormat('en-US', {
 ---
 
 <div class="blog-header">
-  <div class="header-article">
-    <h2 class="blog-article-title"><a href={href}>{title}</a></h2>
-    <div class="date">{formatted}</div>
-  </div>
-  <div class="blog-article">
-    <img src={image} alt={title} />
-    <div class="blog-article-summary">
-      {summary}
+  <a href={href}>
+    <div class="blog-article">
+      <img src={image} alt={title} />
+      <h2 class="blog-article-title">{title}</h2>
+      <div class="blog-article-summary">
+        {summary}
+      </div>
     </div>
-  </div>
+  </a>
 </div>

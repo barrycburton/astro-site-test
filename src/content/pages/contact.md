@@ -1,6 +1,8 @@
 ---
 title: Contact
-in-menu: false
+inmenu: false
 ---
 
 Contact form here
+
+Plus other stuff?

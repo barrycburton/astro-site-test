@@ -3,7 +3,7 @@ import { getCollection, render } from 'astro:content';
 import PageLayout from '../../layouts/PageLayout.astro';
 
 export async function getStaticPaths() {
-  const work = (await getCollection('work', ({ data }) => !data.draft)).sort(
+  const work = (await getCollection('work')).sort(
     (a, b) => +b.data.date - +a.data.date,
   );
 
@@ -26,6 +26,7 @@ const fmt = (d: Date) =>
 
 <PageLayout
   title={item.data.title}
+  image={item.data.image}
 >
   <div class="post-meta">
     <span>{fmt(item.data.date)}</span>
@@ -40,11 +41,11 @@ const fmt = (d: Date) =>
       </div>
     )
   }
-
-  <img data-editable="image" data-prop-src="image" src={item.data.image} alt="" loading="lazy" />
   
-  <div class="work-item__summary">
-    <Content />
+  <hr style="border:0;border-top:1px solid #94918f;margin:32px 0;" />
+
+  <div class="prose">
+      <Content />
   </div>
 
   <nav class="post-nav" aria-label="Adjacent Work">

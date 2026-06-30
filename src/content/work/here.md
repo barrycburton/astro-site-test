@@ -5,7 +5,7 @@ featured: false
 categories:
   - category1
   - category2
-image: '@/public/IMG_1157.jpeg'
+image: '/uploads/IMG_1157.jpeg'
 ---
 
 - one
@@ -15,5 +15,3 @@ image: '@/public/IMG_1157.jpeg'
 > some will say
 
 [here](google.com)
-
-~~nope~~

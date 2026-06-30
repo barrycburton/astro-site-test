@@ -22,14 +22,14 @@ No gradients, shadows, or accent colors.
 | Inter                   | Body, UI                      | 300 to 600 |
 | Playfair Display Italic | Emphasis, pull-quotes         | 400 to 500 |
 
-**Scale:** hero `132px` then `9vw` then `18vw`; page-title `clamp(40px, 7vw, 88px)`; article H2 `32px`; menu `22px` then `1.6vw`; body `18px`; meta `13` to `14px`. Letter-spacing tightens with size (`-0.5px` to `-5px`).
+**Scale:** main-title `132px` then `9vw` then `18vw`; page-title `clamp(40px, 7vw, 88px)`; article H2 `32px`; menu `22px` then `1.6vw`; body `18px`; meta `13` to `14px`. Letter-spacing tightens with size (`-0.5px` to `-5px`).
 
 ## Layout
 
 Two modes:
 
 1. **Magazine image** (`/`): bespoke 4-col grid (`15% 20% 35% 30%`), `100dvh`, no `PageLayout`.
-2. **Subpage**: `PageLayout` with top nav, optional hero, `.page-main` (max 920px), footer.
+2. **Subpage**: `PageLayout` with top nav, optional main-title, `.page-main` (max 920px), footer.
 
 **Breakpoints:** 1400, 1260, 1030, 768, 560.
 Hamburger appears at ≤1030, single column at ≤768.
@@ -43,7 +43,7 @@ Hamburger appears at ≤1030, single column at ≤768.
 | [`Menu`](src/components/Menu.astro)                       | Primary nav (left rail, mobile drawer) |
 | [`Footer`](src/components/Footer.astro)                   | Subpage footer                         |
 | [`StickyHeader`](src/components/StickyHeader.astro)       | "Header"                               |
-| [`PortfolioItem`](src/components/PortfolioItem.astro)     | Image hero card (scroll-snaps)         |
+| [`PortfolioItem`](src/components/PortfolioItem.astro)     | Image card (scroll-snaps)         |
 | [`Sidebar`](src/components/Sidebar.astro)                 | Newsletter items                       |
 
 ## Layouts
@@ -78,5 +78,5 @@ Grayscale (`filter: grayscale(1)`). Editorial / portrait stock.
 ## Adding a subpage
 
 1. Copy [`src/pages/_template.astro.example`](src/pages/_template.astro.example) to `src/pages/<name>.astro`.
-2. Set `title`, `description`, `eyebrow` (and `heroImage` if you want one).
+2. Set `title`, `description`, `eyebrow` (and `image` if you want one).
 3. Add to `items[]` in [`Menu`](src/components/Menu.astro) if it should appear in nav.

@@ -3,6 +3,7 @@ title: Recent Notes
 date: 2022-01-15T00:00:00Z
 image: >-
   https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?auto=format&fit=crop&w=1600&q=70
+draft: false
 categories:
   - category4
   - category5

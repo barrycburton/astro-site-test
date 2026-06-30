@@ -1,8 +1,21 @@
-# Self Esteem (Astro Template)
+# Portfolio + Newsletter with CMS
 
-[![Live preview](https://img.shields.io/badge/▶_Live_preview-121418?style=for-the-badge&labelColor=121418&color=e9e6e4)](https://miro.build/templates/self-esteem)
+- Astro static site front end
+- SveltiaCMS single page site back end for WYSIWYG managment
 
-A magazine-style editorial template built with [Astro](https://astro.build). Original layout by [Aysenur Turk](https://codepen.io/TurkAysenur/pen/gOmMgpx), re-implemented here as a full project.
+## TODO
+- Clean up CSS
+- Fix image sizing (mainly heights) on various pages
+- Fix main page on mobile
+- Add JS to randomize order of content on main page
+- Add Github action to build and deploy to Cloudflare Worker
+- optimize size of uploaded images
+- customize SveltiaCMS logo and title
+- Add Component for Contact form
+- Add Component for MailChimp newsletter form
+- Add Mailchimp RSS integration for Newsletter
+
+Based on Self Esteem (Astro Template), magazine-style editorial template built with [Astro](https://astro.build). Original layout by [Aysenur Turk](https://codepen.io/TurkAysenur/pen/gOmMgpx), re-implemented here as a full project.
 
 ## Quick start
 
@@ -67,7 +80,7 @@ Drop a `.md` or `.mdx` file in `src/content/newsletter/`:
 ```md
 ---
 title: 'Your Article Title'
-bigTitle: 'Hero'
+bigTitle: 'Main Title'
 emphasis: 'Word' # optional, italicised inside the headline
 headline: 'Sharing The {emphasis} Acclaim About Motivation'
 excerpt: 'Teaser shown on the image and in /blog.'
