@@ -12,7 +12,7 @@
 - optimize size of uploaded images
 - customize SveltiaCMS logo and title
 - Add Component for Contact form
-- Add Component for MailChimp newsletter form
+- Add Component for MailChimp newsletter signup form
 - Add Mailchimp RSS integration for Newsletter
 - Move Sveltia config out of Astro config into a dedicated config file
 - Create custom Github App to handle Sveltia authentication (https://github.com/sveltia/sveltia-cms-auth)
